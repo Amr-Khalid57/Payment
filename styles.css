@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    /* background-image: url(https://images.pexels.com/photos/583847/pexels-photo-583847.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); */
+    background-image: url(https://thesolohouse.com/cdn/shop/files/1111111.jpg?v=1692945399&width=1800);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+  .payment-options {
+    width: 60%;
+    margin: 50px auto;
+    background-color: #d5dee0bf;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-options h1 {
+    text-align: center;
+    color: #c8d7df;
+    font-weight: bold;
+    font-size: 35px;
+    margin: 27px;
+    padding: 15px;
+    background-color: #15388d;
+    border-radius: 12px;
+  }
+  
+  .product {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .product h2 {
+    margin-top: 33px;
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 47px;
+  }
+  
+  .product p {
+    margin: 30px;
+    font-size: 34px;
+    font-weight: bold;
+    margin-top: 47px;
+    margin-left: 47px;
+  }
+  
+  .payment-methods {
+    margin-bottom: 20px;
+  }
+  
+  .payment-methods h3 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    background: #173a6f;
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+    height: 51px;
+  }
+  
+  .payment-methods ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .payment-methods li {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .purchase-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .purchase-btn:hover {
+    background-color: #0056b3;
+  }
+  
+.input-container {
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+label{
+font-size: 23px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+  width: 45%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+form {
+  width: 400px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+#card-element {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.a-btn {
+text-decoration: none;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#error-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+/* styles.css */
+
+.input-container {
+margin-bottom: 20px;
+width: 300px;
+}
+
+input::placeholder{
+  color: #b1baca;
+}

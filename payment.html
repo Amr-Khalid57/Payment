@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Options for Product</title>
+  <script src="https://js.stripe.com/v3/"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="payment-options">
+    <h1>Payment Options</h1>
+    <div class="product">
+      <h2> Product Name : T-Shirt </h2>
+      <p>Price: $50</p>
+    </div>
+    <div class="payment-methods">
+      <!-- <h3>payment Methods</h3> --> <br>
+      <div class="info">
+        <label for="name" >Full Name</label><br>
+        <input type="text" id="name" name="payment" placeholder="Name" required >
+        <br>
+        <label for="email">Your Email</label><br>
+        <input type="email" id="email" name="payment" placeholder="Email" required>
+        <br>
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="payment" placeholder="Password" required>
+        <br>
+        <label for="phone">Phone</label><br>
+        <input type="tel" id="phone" name="payment" placeholder="Phone" required>
+      </div>
+      <br>
+      <!-- <ul>
+        <li><input type="radio" id="credit-card" name="payment" value="credit-card"><label for="credit-card">Credit Card</label></li>
+        <li><input type="radio" id="paypal" name="payment" value="paypal"><label for="paypal">Paypal </label></li>
+        <li><input type="radio" id="cash" name="payment" value="cash"><label for="cash">Cash</label></li>
+      </ul> -->
+    </div>
+    <form id="payment-form">
+      <div id="card-element"><!-- ستظهر عناصر Stripe هنا --></div>
+      <button id="submit">
+        الدفع الآن
+      </button>
+      <div id="error-message" role="alert"></div>
+    </form>
+  
+    <script>
+      // تهيئة Stripe.js
+      var stripe = Stripe('YOUR_PUBLISHABLE_KEY');
+      var elements = stripe.elements();
+      
+      // تهيئة عنصر البطاقة
+      var cardElement = elements.create('card');
+      cardElement.mount('#card-element');
+  
+      // التحقق من عنصر البطاقة لفحص الأخطاء أثناء الإدخال
+      cardElement.on('change', function(event) {
+        var displayError = document.getElementById('error-message');
+        if (event.error) {
+          displayError.textContent = event.error.message;
+        } else {
+          displayError.textContent = '';
+        }
+      });
+  
+      // إضافة إجراء عند الضغط على زر الدفع
+      var form = document.getElementById('payment-form');
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        stripe.createToken(cardElement).then(function(result) {
+          if (result.error) {
+            // يوجد خطأ في البيانات
+            var errorElement = document.getElementById('error-message');
+            errorElement.textContent = result.error.message;
+          } else {
+            // نجاح - يمكنك استخدام result.token لمعالجة الدفعة
+            console.log(result.token);
+            // هنا يمكنك إرسال result.token إلى الخادم الخاص بك لإتمام المدفوعات
+            // على سبيل المثال: fetch('/process-payment', { method: 'POST', body: JSON.stringify({ token: result.token }) });
+          }
+        });
+      });
+    </script>
+    <br>
+    <a href="payment.html" class="a-btn"><button class="purchase-btn" >شراء الآن </button></a>
+  </div>
+</body>
+</html>
